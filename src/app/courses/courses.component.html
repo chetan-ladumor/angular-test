@@ -39,7 +39,7 @@
 <br>
 <h1>Use of Two way binding</h1>
 <input type="text" [value]="email1" (keyup.enter)="email1=$event.target.value;onkeyuptwoway()" >
-<input type="text" [(ngModel)]="email2" (keyup.enter)="value;onkeyuptwoway2()">
+<input type="text" [(ngModel)]="email2" (keyup.enter)="$event.target.value;onkeyuptwoway2()">
 
 <!-- Custom pipe -->
 <p>{{ pipedata | summary:10 }}</p>
