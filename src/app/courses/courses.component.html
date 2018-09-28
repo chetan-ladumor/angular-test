@@ -1,0 +1,45 @@
+<p>
+  courses works!
+</p>
+<h1>First Component TemplateUrl</h1>
+<h1>Data binding =>{{title}}</h1>
+<h3>{{ "Call By Method:"+ getTitle() }}</h3>
+
+<!-- ******************************* -->
+<h1>Use of Directives to show list of courses</h1>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+  <br>
+  <h1>Use of service</h1>
+  <li *ngFor="let s_course of service_courses">
+      {{ s_course }}
+    </li>
+  
+</ul>
+
+<!-- Event Binding -->
+<div (click)="divClicked()">
+    <p (click)="pTagClicik($event)">
+        <button (click)="onClick($event)">Save</button>
+    </p>
+</div>
+
+<!-- Event filterinig -->
+<!-- <input type="text" (keyup)="onKeyup($event)"> -->
+<input type="text" (keyup.enter)="onKeyup()">
+
+<!-- Template variable -->
+<br>
+<h1>Use of template variable</h1>
+<input type="text" #email (keyup.enter)="onKeyUptempateVariable(email.value)" >
+
+<!-- Two way binding -->
+<br>
+<h1>Use of Two way binding</h1>
+<input type="text" [value]="email1" (keyup.enter)="email1=$event.target.value;onkeyuptwoway()" >
+<input type="text" [(ngModel)]="email2" (keyup.enter)="value;onkeyuptwoway2()">
+
+<!-- Custom pipe -->
+<p>{{ pipedata | summary:10 }}</p>

@@ -1,0 +1,18 @@
+<h2>Employee infomation by using component communication</h2>
+
+<!-- output property:data from child to parent -->
+<h4>name: {{ selectedEmployeedata.selectedName }}</h4>
+<h4>City: {{ selectedEmployeedata.selecteedCity }}</h4>
+
+
+<app-child 
+    [name]="employee.name"
+    [cCity]="employee.city"
+    (sendRecord) = "getRecord($event)"
+    *ngFor="let employee of EmployeeRecords">
+
+</app-child>
+
+<app-child-second [childData]="myParentArray" >
+  
+</app-child-second>
